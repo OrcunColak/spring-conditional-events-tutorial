@@ -1,23 +1,19 @@
 package com.colak.springtutorial;
 
 import com.colak.springtutorial.service.userregistration.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@RequiredArgsConstructor
 public class SpringTutorialApplication implements CommandLineRunner {
 
-    private UserService userService;
+    private final UserService userService;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringTutorialApplication.class, args);
-    }
-
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
     }
 
     @Override
